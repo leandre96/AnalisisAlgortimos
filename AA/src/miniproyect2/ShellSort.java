@@ -6,6 +6,7 @@
 package miniproyect2;
 
 import java.math.BigInteger;
+import java.util.List;
 
 /**
  *
@@ -48,14 +49,17 @@ public class ShellSort {
     // Driver method
     public static void main(String args[])
     {
-        CreacionData.cargarArreglo();
-        int arr[] = CreacionData.arreglo();
+
+        long tot=0;
+        List<int[]> lista=CreacionData.configuracionE();
+        for(int[] arre:lista){
+            long medi=System.nanoTime();
+            sort(arre);
+            long m=System.nanoTime();
+            tot=tot+(m-medi);
+        }
         
-        sort(arr);
- 
-        for(int i=0; i < arr.length; i++){  
-                        System.out.println(arr[i] + " ");  
-                }
         
+        System.out.println("Tiempo total de los 10 datos es "+tot);
     }
 }

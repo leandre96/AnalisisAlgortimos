@@ -5,6 +5,8 @@
  */
 package miniproyect2;
 
+import java.util.List;
+
 /**
  *
  * @author User
@@ -68,19 +70,21 @@ public class HeapSort {
         System.out.println();
     }
     public static void main(String[] args) {
-                CreacionData.cargarArreglo();
-                int arr[] =CreacionData.arreglo();  
+             long tot=0;
+        List<int[]> lista=CreacionData.configuracionE();
+        for(int[] arre:lista){
+            long medi=System.nanoTime();
+            new HeapSort().sort(arre);
+            long m=System.nanoTime();
+            tot=tot+(m-medi);
+        }
+        
+        
+        System.out.println("Tiempo total de los 10 datos es  "+tot);
                  
-                System.out.println("Configuracion F");  
-
-                System.out.println();  
-                  
-                new HeapSort().sort(arr);//sorting array elements using bubble sort  
+                //sorting array elements using bubble sort  
                  
-                System.out.println("Array After Bubble Sort");  
-                for(int i=0; i < arr.length; i++){  
-                        System.out.println(arr[i] + " ");  
-                }  
+                
    
         }  
 }

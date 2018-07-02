@@ -6,6 +6,7 @@
 package miniproyect2;
 
 import aa.*;
+import java.util.List;
 
 /**
  *
@@ -26,19 +27,18 @@ public class QuickSort {
     }
     
     public static void main(String[] args) {
-                CreacionData.cargarArreglo();
-                int arr[] =CreacionData.arreglo();  
-                 
-                System.out.println("Configuracion F");  
-
-                System.out.println();  
-                  
-                new QuickSort().sort(arr);//sorting array elements using bubble sort  
-                 
-                System.out.println("Array After Bubble Sort");  
-                for(int i=0; i < arr.length; i++){  
-                        System.out.println(arr[i] + " ");  
-                }  
+long tot=0;
+        List<int[]> lista=CreacionData.configuracionE();
+        for(int[] arre:lista){
+            long medi=System.nanoTime();
+            new QuickSort().sort(arre);
+            long m=System.nanoTime();
+            tot=tot+(m-medi);
+        }
+        
+        
+        System.out.println("Tiempo total de los 10 datos es  "+tot);
+               
    
         }  
     private void quickSort(int lowerIndex, int higherIndex) {

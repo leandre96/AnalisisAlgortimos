@@ -11,6 +11,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -68,4 +70,60 @@ public class CreacionData {
     public static int[] arreglo(){
         return arregloGlobal;
     }
+    public static List<int[]> configuracionA(){
+        List<int[]> arr=new LinkedList<>();
+        for(int i=0;i<100000;i++){
+            int[] peque=new int[10];
+            for(int j=0;j<10;j++){
+                peque[j]=new Random().nextInt(Integer.MAX_VALUE-1000000000)+1000000000;
+            }
+            arr.add(peque);
+        }
+        return arr;
+    }
+    public static List<int[]> configuracionB(){
+        List<int[]> arr=new LinkedList<>();
+        for(int i=0;i<10000;i++){
+            int[] peque=new int[100];
+            for(int j=0;j<100;j++){
+                peque[j]=new Random().nextInt(Integer.MAX_VALUE-1000000000)+1000000000;
+            }
+            arr.add(peque);
+        }
+        return arr;
+    }
+    public static List<int[]> configuracionC(){
+        List<int[]> arr=new LinkedList<>();
+        for(int i=0;i<1000;i++){
+            int[] peque=new int[1000];
+            for(int j=0;j<1000;j++){
+                peque[j]=new Random().nextInt(Integer.MAX_VALUE-1000000000)+1000000000;
+            }
+            arr.add(peque);
+        }
+        return arr;
+    }
+    public static List<int[]> configuracionD(){
+        List<int[]> arr=new LinkedList<>();
+        for(int i=0;i<100;i++){
+            int[] peque=new int[10000];
+            for(int j=0;j<10000;j++){
+                peque[j]=new Random().nextInt(Integer.MAX_VALUE-1000000000)+1000000000;
+            }
+            arr.add(peque);
+        }
+        return arr;
+    }
+    public static List<int[]> configuracionE(){
+        List<int[]> arr=new LinkedList<>();
+        for(int i=0;i<10;i++){
+            int[] peque=new int[100000];
+            for(int j=0;j<100000;j++){
+                peque[j]=new Random().nextInt(Integer.MAX_VALUE-1000000000)+1000000000;
+            }
+            arr.add(peque);
+        }
+        return arr;
+    }
+    
 }

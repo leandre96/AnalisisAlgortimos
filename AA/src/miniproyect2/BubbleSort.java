@@ -6,6 +6,7 @@
 package miniproyect2;
 
 import java.math.BigInteger;
+import java.util.List;
 
 /**
  *
@@ -30,19 +31,21 @@ public class BubbleSort {
   
     }  
     public static void main(String[] args) {
-                CreacionData.cargarArreglo();
-                int arr[] =CreacionData.arreglo();  
-                 
-                System.out.println("Configuracion F");  
-
-                System.out.println();  
+                   long tot=0;
+        List<int[]> lista=CreacionData.configuracionE();
+        for(int[] arre:lista){
+            long medi=System.nanoTime();
+           bubbleSort(arre);
+            long m=System.nanoTime();
+            tot=tot+(m-medi);
+        }
+        
+        
+        System.out.println("Tiempo total de los 10 datos es  "+tot);
                   
-                bubbleSort(arr);//sorting array elements using bubble sort  
+                //sorting array elements using bubble sort  
                  
-                System.out.println("Array After Bubble Sort");  
-                for(int i=0; i < arr.length; i++){  
-                        System.out.println(arr[i] + " ");  
-                }  
+                
    
         }  
   
